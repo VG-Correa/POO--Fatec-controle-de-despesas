@@ -103,8 +103,17 @@ public class DespesaPessoal {
     public void imprime(LocalDate data) {
         String texto = "!Despesas!";
 
+        int dia = data.getDayOfMonth();
+        int mes = data.getMonthValue();
+        int ano = data.getYear();
+
         for (Despesa despesa : despesas) {
-            if (despesa.getData() == data) {
+
+            int dia_desp = despesa.getData().getDayOfMonth();
+            int mes_desp = despesa.getData().getMonthValue();
+            int ano_desp = despesa.getData().getYear();
+
+            if (dia == dia_desp & mes == mes_desp & ano == ano_desp) {
                 texto = texto + "\n================\n" + despesa;
             }
         }
